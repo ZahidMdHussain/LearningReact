@@ -1,0 +1,88 @@
+body{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  line-height: 1.666;
+  background: #bedee2;
+  color: #555;
+}
+h1{
+  font-size: 400%;
+  font-weight: 800;
+  color: #fff ;
+  text-align: center;
+  margin-top: 3rem;
+}
+h1 span{
+  background-color: #5ad3c5;
+  padding: .5rem 1rem;
+  border-radius: 5%;
+}
+.dictionary{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 4rem auto;
+  max-width: 90%;
+}
+
+.dictionary > .term {
+  text-align: center;
+  max-width:20rem ;
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  border-radius: 8px;
+  background-color:#fff ;
+  transition: all 100ms ease-in-out;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.229);
+}
+dt{
+  color: #2ec2b0;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+dt span {
+  font-size: 200%;
+  font-weight: 700;
+}
+.emoji{
+  margin: 0 auto 1rem;
+  display: block;
+  font-size: 400%;
+}
+dd{
+  text-align: center;
+  margin-left: 0;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+dd dt {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  font-size: inherit;
+}
+footer{
+  text-align: center;
+  color: #fff;
+  margin-top: -20px;
+
+}
+
+@media (max-width:600px){
+  h1{
+    font-size: 250%;
+  }
+  .dictionary{
+    justify-content: space-around;
+  }
+}
+
+@media (max-width:400px){
+  h1{
+    font-size: 220%;
+  }
+  .dictionary{
+    justify-content: space-around;
+  }
+}
