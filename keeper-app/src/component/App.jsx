@@ -3,12 +3,19 @@ import Header from "./Header";
 import Note from "./Note";
 import Footer from "./Footer";
 import "./app.css";
+import Notes from "../notes"
 
 function App() {
   return (
     <>
     <Header />
-    <Note />
+    <div className="container">
+    {Notes.map((item) => {
+        return (
+          <Note key={item.key} title={item.title} content={item.content} />
+        );
+      })}
+      </div>
     <Footer />
   </>
   );
