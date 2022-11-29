@@ -1,23 +1,18 @@
 import './App.css';
-
 import React, { useState } from "react";
 import Itemlist from "./Itemlist";
+import InputArea from "./InputArea"
 
 function App() {
-  const [inputText, getInputText] = useState("");
   const [finalText,addText] = useState([]);
 
-  function enteredText(event){
-    getInputText(event.target.value)
-  }
-  function addToList(){
+  function addToList(inputText){
     addText (prevValue => {
       if(inputText==="")
       return [...prevValue]
       else
       return [...prevValue,inputText]
     })
-    getInputText("");
   }
 
   return (
@@ -25,12 +20,7 @@ function App() {
       <div className="heading">
         <h1>To-Do List</h1>
       </div>
-      <div className="form">
-        <input onChange={enteredText} type="text" value={inputText} />
-        <button onClick={addToList}>
-          <span>Add</span>
-        </button>
-      </div>
+      <InputArea onAdd={addToList} />
       <div>
         <ul>
           {finalText.map((items,index) => {
