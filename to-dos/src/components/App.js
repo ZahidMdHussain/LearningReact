@@ -1,6 +1,7 @@
 import './App.css';
 
 import React, { useState } from "react";
+import Itemlist from "./Itemlist";
 
 function App() {
   const [inputText, getInputText] = useState("");
@@ -32,8 +33,8 @@ function App() {
       </div>
       <div>
         <ul>
-          {finalText.map(items => {
-            return <li>{items}</li>
+          {finalText.map((items,index) => {
+            return <Itemlist key={index} id= {index} items={items}/>
           })}
         </ul>
       </div>
