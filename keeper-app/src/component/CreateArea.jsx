@@ -18,22 +18,30 @@ function CreateArea(props) {
             content:""
         });
     }
+    const [inputStatus, getStatus] = useState(false);
+    function showInput(){
+      getStatus(true)
+    }
 
 
     return (
         <div>
           <form onSubmit={mySubmit}>
+          {inputStatus ?
             <input
               onChange={getNewNotes}
               name="title"
               placeholder="Title"
               value={myNote.title}
             />
+          : null}
             <textarea
+            onClick={showInput}
               onChange={getNewNotes}
               name="content"
               placeholder="Take a note..."
-              rows="3"
+              // {inputStatus ? rows="3" : null}
+              rows={inputStatus ? "3" : "1"}
               value={myNote.content}
             />
             <button onClick={() => {

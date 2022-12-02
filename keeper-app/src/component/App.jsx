@@ -16,6 +16,13 @@ function App() {
       return [...prevValue, myNote]
     })
   }
+  function deleteNotes(id){
+    addNotes((prevValue)=> {
+      return prevValue.filter((noteItem,index) => {
+        return index !== id;
+      })
+    })
+  }
 
   return (
     <>
@@ -23,7 +30,7 @@ function App() {
     <CreateArea onAdd={addToApp}/>
     <div className="container">
     {notes.map ((item,index) => {
-      return <Note key={index} id={index} title={item.title} content={item.content} />
+      return <Note onDelete={deleteNotes} key={index} id={index} title={item.title} content={item.content} />
     })}
     </div>
     <Footer />
