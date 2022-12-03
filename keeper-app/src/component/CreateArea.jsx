@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import AddIcon from '@mui/icons-material/Add';
+import Zoom from '@mui/material/Zoom';
 
 function CreateArea(props) {
     const [myNote,getNote] = useState({
@@ -40,15 +42,16 @@ function CreateArea(props) {
               onChange={getNewNotes}
               name="content"
               placeholder="Take a note..."
-              // {inputStatus ? rows="3" : null}
               rows={inputStatus ? "3" : "1"}
               value={myNote.content}
             />
+            <Zoom in={true}>
             <button onClick={() => {
                 props.onAdd(myNote)
             }}>
-              Add
+              <AddIcon/>
             </button>
+            </Zoom>
           </form>
         </div>
       );

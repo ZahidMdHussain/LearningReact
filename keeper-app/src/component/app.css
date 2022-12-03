@@ -7,8 +7,7 @@
     font-family: "Montserrat", sans-serif;
   }
   body {
-    /* background: #eee; */
-    background-color: #d4b678;
+    background-color: #fff;
     background-image: url("https://www.transparenttextures.com/patterns/food.png");
   }
   
@@ -44,6 +43,7 @@
     flex-wrap: wrap;
     justify-content:flex-start;
     padding:16px;
+    
   }
   .note {
     background: #fff;
@@ -54,7 +54,7 @@
     margin: 16px;
   }
   .note h1 {
-    font-size: 1.1em;
+    font-size: 1.3em;
     margin-bottom: 6px;
     color: cadetblue;
   }
@@ -75,6 +75,7 @@
     height: 36px;
     cursor: pointer;
     outline: none;
+    background-color: transparent;
   }
   form {
     position: relative;
@@ -99,7 +100,7 @@
     border: none;
     padding: 4px;
     outline: none;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-family: inherit;
     resize: none;
 
@@ -143,6 +144,11 @@
       position: relative;
       top: 30px;
       bottom: 10px;
+    }
+  }
+  @media (max-width:500px){
+    form {
+      width: 350px;
     }
   }
   
